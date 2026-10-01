@@ -1,45 +1,62 @@
 # FinTrack – Personal Finance Management System
 
-A beginner-friendly full-stack finance tracker built with the same core stack listed on my resume:
-- React.js
-- Node.js
-- Express.js
-- MongoDB
-- REST API
-- JWT authentication
+FinTrack is a full-stack personal finance management application for tracking income and expenses in one place. Users can create an account, securely log in, record transactions, and monitor their overall financial activity through a simple dashboard.
 
 ## Features
-- Register and login
+
+- User registration and login
+- JWT-based authentication
 - Add income and expense transactions
-- View balance, total income and total expenses
+- Categorize transactions
+- Record transaction dates
+- View total balance, income, and expenses
+- View recent transaction history
 - Delete transactions
-- Simple dashboard
-- Protected API routes using JWT
+- Income and expense overview
+- Light and dark mode
+- Responsive interface
 
-## Project structure
+## Tech Stack
+
+### Frontend
+- React.js
+- Vite
+- CSS
+
+### Backend
+- Node.js
+- Express.js
+- REST API
+- JWT
+
+### Database
+- MongoDB
+- Mongoose
+
+## Project Structure
+
+```text
 FinTrack/
-  client/       React frontend
-  server/       Express + MongoDB backend
-
-## Run locally
-
-### 1. Backend
-cd server
-npm install
-Create a `.env` file:
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/fintrack
-JWT_SECRET=replace_with_a_secret
-
-npm run dev
-
-### 2. Frontend
-Open another terminal:
-cd client
-npm install
-npm run dev
-
-Then open the URL shown by Vite.
-
-## Interview explanation
-React handles the user interface. The React app sends HTTP requests to the Express REST API. Express validates the request and uses Mongoose to read/write MongoDB. JWT is used to identify the logged-in user on protected routes.
+├── client/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── styles.css
+│   ├── index.html
+│   └── package.json
+│
+├── server/
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── models/
+│   │   ├── Transaction.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   └── transactions.js
+│   ├── server.js
+│   ├── .env.example
+│   └── package.json
+│
+├── .gitignore
+└── README.md
